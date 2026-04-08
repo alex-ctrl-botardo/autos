@@ -39,7 +39,7 @@ $resultado_listar_motor = $stms->get_result();
 
             </tr>
 
-            <?php while ($fila = $resultado_listar_motor-mysqli_fetch_assoc()) : ?>
+            <?php while ($fila = $resultado_listar_motor-mysqli_fetch_assoc()): ?>
                 <tr>
                     <td> <?php $fila["id_motor"] ?></td>
                     <td> <?php htmlspecialchars($fila["nombre"]) ?> </td>
