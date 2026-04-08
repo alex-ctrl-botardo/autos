@@ -39,16 +39,15 @@ $resultado_listar_motor = $stms->get_result();
 
             </tr>
 
-            <?php while ($fila = $resultado_listar_motor-mysqli_fetch_assoc()): ?>
+            <?php while ($fila = $resultado_listar_motor->fetch_assoc()): ?>
                 <tr>
-                    <td> <?php $fila["id_motor"] ?></td>
-                    <td> <?php htmlspecialchars($fila["nombre"]) ?> </td>
-                    <td> <?php htmlspecialchars($fila["potencia"]) ?> </td>
-                    <td> <?php htmlspecialchars($fila["par"]) ?> </td>
-                    <td> <?php htmlspecialchars($fila["cilindrada"]) ?> </td>
-                    <td> <?php htmlspecialchars($file["num_pistones"]) ?> </td>
-                    <td> <?php  ?> </td>
-                    <td> <?php  ?> </td>
+                    <td> <?= $fila["id_motor"] ?></td>
+                    <td> <?= htmlspecialchars($fila["nombre"]) ?> </td>
+                    <td> <?= htmlspecialchars($fila["potencia"]) ?> </td>
+                    <td> <?= htmlspecialchars($fila["par"]) ?> </td>
+                    <td> <?= htmlspecialchars($fila["cilindrada"]) ?> </td>
+                    <td> <?= htmlspecialchars($file["num_pistones"]) ?> </td>
+                    <td> <?= htmlspecialchars($fila["id_marca"]) ?> </td>
                 </tr>
             <?php endwhile ?>
         </table>
