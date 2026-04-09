@@ -31,16 +31,16 @@ $stmt = $conn->prepare(
     "INSERT INTO Motor (nombre, potencia, par, cilindrada, num_pistones, id_marca)
         VALUES (?,?,?,?,?,?)" );
 
-$stmt->bind_param("sdddii", $nombre, $potencia, $par, $cilindrada, $num_pistones, $id_marca);
+$stmt->bind_param("sssdii", $nombre, $potencia, $par, $cilindrada, $num_pistones, $id_marca);
 
 //ejercutar
-if ($stms->execute()) {
+if ($stmt->execute()) {
     header("Location: formulario_motor.php?ok=1");
 } else {
-    echo "Error: " . $stms->error;
+    echo "Error: " . $stmt->error;
 }
 
-$stms->close();
+$stmt->close();
 $conn->close();
 
 ?>
