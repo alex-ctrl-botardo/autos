@@ -9,42 +9,46 @@ $stmt = $conn->prepare(
 // ejecucion y tomar resultado
 $stmt->execute();
 $resultado_listar_marca = $stmt->get_result();
+//echo "Illo"
 ?>
+
 
 
 <!DOCTYPE html>
 <!-- Tabla -->
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Listado de Marcas</title>
-    <style>
-        table { border-collapse: collapse; }
-        th, td { padding: 20px; border: 1px solid }
-    </style>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <title>Listado de Marcas</title>
+        <style>
+            /* Estilo Tabla */
+            table { border-collapse: collapse; }
+            
+            th, td { padding: 20px; border: 1px solid }
+        </style>
+    </head>
 
-<body>
-<h2>Listado de Marcas</h2>
+    <body>
+        <h2>Listado de Marcas</h2>
 
-<table>
-    <tr>
-        <th>ID</th>
-        <th>Nombre</th>
-        <th>Pais</th>
-    </tr>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Pais</th>
+            </tr>
 
-<?php while ($fila = $resultado_listar_marca->fetch_assoc()): ?>
-    <tr>
-        <td> <?= $fila["id_marca"] ?> </td>
-        <td> <?= htmlspecialchars($fila["nombre"]) ?> </td>
-        <td> <?= htmlspecialchars($fila["pais"]) ?> </td>
-    </tr>
-<?php endwhile; ?>
+            <?php while ($fila = $resultado_listar_marca->fetch_assoc()): ?>
+                <tr>
+                    <td> <?= $fila["id_marca"] ?> </td>
+                    <td> <?= htmlspecialchars($fila["nombre"]) ?> </td>
+                    <td> <?= htmlspecialchars($fila["pais"]) ?> </td>
+                    </tr>
+            <?php endwhile; ?>
 
-</table>
+        </table>
 
-</body>
+    </body>
 </html>
 
 <?php

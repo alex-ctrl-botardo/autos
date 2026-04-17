@@ -3,42 +3,80 @@ include "conexion.php";
 
 //seleccion
 $stmt = $conn->prepare(
-    "SELECT id_motor, nombre, potencia, par, cilindrada, num_pistones, id_marca"
+    "SELECT id_motor, nombre, potencia, par, cilindrada, num_pistones FROM Motor ORDER BY id_motor" 
 );
 
-$stms->execute();
-$resultado_listar_motor = $stms->get_result();
+$stmt->execute();
+$resultado_listar_motor = $stmt->get_result();
 
+// echo "illo";
+// /* Consulta marcas */
+// $quets_marcas = "SELECT id_marca, nombre FROM Marca";
 
+// $resultado_marcas = $conn->query($quets_marcas);
 
+// if (!$resultado_marcas) {
+//     die("Error en la consulta de marcas: " . $conn->error);
+// }
+
+// echo "Illo"
 ?>
 
+
 <!DOCTYPE html>
+<!-- Tabla -->
 <html lang="es">
     <head>
         <meta charset="UTF-8">
         <title>Listado de Motor</title>
         <style>
-            table { border-collapse: collapse ;}
-            th, td { padding: 20px; border: 1px solid ;} 
+            /* Estilo Tabla */
+             table {
+                border-collapse: collapse;
+                color: black;
+                background-color: lightblue;
+            } 
+
+            /* Zeldas */
+            th, td { 
+                padding: 20px; 
+                border: 6px solid ; 
+                border-color: purple;
+            }
+            
+            /* Estilo Cabezera */
+            .cabezera { 
+                text-decoration: underline;
+                color: darkgreen;
+                background-color: lightgreen;
+            }   
+
+            /* Datos */
+            td {
+                text-align: center;
+            }
+            
+            
         </style>
     </head>
 
     <body>
         <h2>Listado de Motores</h2>
-
+        <style type="text/css">
+       
+        </style>
         <table>
-            <tr>
+            <tr class="cabezera">
                 <th>ID</th>
                 <th>Nombre</th>
                 <th>Potencia</th>
                 <th>Par</th>
                 <th>Cilindrada</th>
                 <th>Numero de Pistones</th>
-                <th>Marca</th>
-
+                <!-- <th>Marca</th> -->
             </tr>
-
+        
+           
             <?php while ($fila = $resultado_listar_motor->fetch_assoc()): ?>
                 <tr>
                     <td> <?= $fila["id_motor"] ?></td>
@@ -46,8 +84,8 @@ $resultado_listar_motor = $stms->get_result();
                     <td> <?= htmlspecialchars($fila["potencia"]) ?> </td>
                     <td> <?= htmlspecialchars($fila["par"]) ?> </td>
                     <td> <?= htmlspecialchars($fila["cilindrada"]) ?> </td>
-                    <td> <?= htmlspecialchars($file["num_pistones"]) ?> </td>
-                    <td> <?= htmlspecialchars($fila["id_marca"]) ?> </td>
+                    <td> <?= htmlspecialchars($fila["num_pistones"]) ?> </td>
+                    <!-- <td> <?= htmlspecialchars($fila["id_marca"]) ?> </td> -->
                 </tr>
             <?php endwhile ?>
         </table>
