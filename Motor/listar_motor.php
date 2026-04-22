@@ -29,14 +29,12 @@ $resultado_listar_motor = $stmt->get_result();
     <head>
         <meta charset="UTF-8">
         <title>Listado de Motor</title>
-         <link rel="stylesheet" href="css/estilos.css">
+         <link rel="stylesheet" href="../css/estilos.css">
     </head>
 
     <body>
         <h2>Listado de Motores</h2>
-        <style type="text/css">
-       
-        </style>
+        
         <table>
             <tr class="cabezera">
                 <th>ID</th>
@@ -53,9 +51,9 @@ $resultado_listar_motor = $stmt->get_result();
                 <tr>
                     <td> <?= $fila["id_motor"] ?></td>
                     <td> <?= htmlspecialchars($fila["nombre"]) ?> </td>
-                    <td> <?= htmlspecialchars($fila["potencia"]) ?> </td>
-                    <td> <?= htmlspecialchars($fila["par"]) ?> </td>
-                    <td> <?= htmlspecialchars($fila["cilindrada"]) ?> </td>
+                    <td> <?= htmlspecialchars($fila["potencia"]) ?> CV</td>
+                    <td> <?= htmlspecialchars($fila["par"]) ?> Nm</td>
+                    <td> <?= htmlspecialchars($fila["cilindrada"]) ?> CC</td>
                     <td> <?= htmlspecialchars($fila["num_pistones"]) ?> </td>
                     <!-- <td> <?= htmlspecialchars($fila["id_marca"]) ?> </td> -->
                 </tr>
