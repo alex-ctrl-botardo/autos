@@ -2,7 +2,7 @@
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
-include "conexion.php";
+include "../conexion.php";
 
 $nombre   = trim($_POST['nombre'] ?? "");
 $id_motor = trim($_POST['id_motor'] ?? "");
