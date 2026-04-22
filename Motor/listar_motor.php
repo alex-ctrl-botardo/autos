@@ -29,35 +29,7 @@ $resultado_listar_motor = $stmt->get_result();
     <head>
         <meta charset="UTF-8">
         <title>Listado de Motor</title>
-        <style>
-            /* Estilo Tabla */
-             table {
-                border-collapse: collapse;
-                color: black;
-                background-color: lightblue;
-            } 
-
-            /* Zeldas */
-            th, td { 
-                padding: 20px; 
-                border: 6px solid ; 
-                border-color: purple;
-            }
-            
-            /* Estilo Cabezera */
-            .cabezera { 
-                text-decoration: underline;
-                color: darkgreen;
-                background-color: lightgreen;
-            }   
-
-            /* Datos */
-            td {
-                text-align: center;
-            }
-            
-            
-        </style>
+         <link rel="stylesheet" href="css/estilos.css">
     </head>
 
     <body>
