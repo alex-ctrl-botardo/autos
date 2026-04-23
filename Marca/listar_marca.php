@@ -20,15 +20,14 @@ $resultado_listar_marca = $stmt->get_result();
     <head>
         <meta charset="UTF-8">
         <title>Listado de Marcas</title>
-        <style>
-            /* Estilo Tabla */
-            table { border-collapse: collapse; }
-            
-            th, td { padding: 20px; border: 1px solid }
-        </style>
+        <link rel="stylesheet" href="/autos/css/estilos.css">
     </head>
 
     <body>
+        <?php if ($conn): ?>
+            <p class="conexion">Conectado correctamente</p>
+        <?php endif; ?>
+
         <h2>Listado de Marcas</h2>
 
         <table>

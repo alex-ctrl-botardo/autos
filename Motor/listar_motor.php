@@ -29,20 +29,24 @@ $resultado_listar_motor = $stmt->get_result();
     <head>
         <meta charset="UTF-8">
         <title>Listado de Motor</title>
-         <link rel="stylesheet" href="../css/estilos.css">
+        <link rel="stylesheet" href="/autos/css/estilos.css">
     </head>
 
     <body>
+    <?php if ($conn): ?>
+            <p class="conexion">Conectado correctamente</p>
+        <?php endif; ?>
+
         <h2>Listado de Motores</h2>
         
-        <table>
-            <tr class="cabezera">
+        <table class="tablas">
+            <tr class="cabecera">
                 <th>ID</th>
                 <th>Nombre</th>
                 <th>Potencia</th>
                 <th>Par</th>
                 <th>Cilindrada</th>
-                <th>Numero de Pistones</th>
+                <th>Nº Pistones</th>
                 <!-- <th>Marca</th> -->
             </tr>
         
