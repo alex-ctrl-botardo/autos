@@ -25,7 +25,9 @@ $resultado_listar_marca = $stmt->get_result();
 
     <body>
         <?php if ($conn): ?>
-            <p class="conexion">Conectado correctamente</p>
+            <div class="cabecera">
+                <p>Conectado correctamente</p>
+            </div>
         <?php endif; ?>
 
         <h2>Listado de Marcas</h2>

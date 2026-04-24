@@ -7,10 +7,12 @@
     border-radius: 1px solid;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
+    width: 75%;
+    margin: 0 auto;
 } 
             
 /* Cabecera */
-.cabecera {
+.cabecera-tabla {
     color: black;
     background-color: lightblue;
     border: 1px solid;
@@ -26,13 +28,43 @@ td {
     border-color: black;
 }
         
-/* Mensaje de Conectado Correctamente */
-.conexion {
-    text-align: end;
-    color: black;
-    font-style: oblique;
-    font-weight: bold;
-    background-color: lightgreen;
-    padding: 10px;
-}        
+/* Cabecera*/
+.cabecera {
+    z-index: 999;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: lightgray;
+    padding: 1px;
+}    
+
+    /* Mensaje conectado correctamente */
+    .mensaje-conexion {
+        font-size: small;
+        text-align: end;
+        color: black;
+        font-style: oblique;
+        font-weight: bold;
+        background-color: lightgreen;
+        display: inline;
+    }    
+
+/* Mensaje de la cabexera*/
+.titulo {
+    /* text-transform: uppercase; */
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-size: 50px;
+    margin: 2px auto;
+    margin-top: 30px;
+}
       
+/* Linea de debajo de la cabecera*/
+.linea-cabecera {
+    border: none;
+    border-top: 2px solid black;
+    width: 80%;
+    margin: 8px auto;
+
+}
+

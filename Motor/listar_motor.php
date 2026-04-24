@@ -34,13 +34,17 @@ $resultado_listar_motor = $stmt->get_result();
 
     <body>
     <?php if ($conn): ?>
-            <p class="conexion">Conectado correctamente</p>
+            <div class="cabecera">
+                <p class="mensaje-conexion">Conectado correctamente</p>
+            </div>  
         <?php endif; ?>
 
-        <h2>Listado de Motores</h2>
-        
+        <h2 class="titulo">Lista de Motores</h2>    
+
+        <hr class="linea-cabecera">
+
         <table class="tablas">
-            <tr class="cabecera">
+            <tr class="cabecera-tabla">
                 <th>ID</th>
                 <th>Nombre</th>
                 <th>Potencia</th>
