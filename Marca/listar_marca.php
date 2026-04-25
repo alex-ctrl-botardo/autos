@@ -24,16 +24,21 @@ $resultado_listar_marca = $stmt->get_result();
     </head>
 
     <body>
-        <?php if ($conn): ?>
-            <div class="cabecera">
-                <p>Conectado correctamente</p>
-            </div>
-        <?php endif; ?>
+        
+        <div class="cabecera">
+            <?php if ($conn): ?>
+                <p class=mensaje-conexion>Conectado correctamente</p>
+            <?php endif; ?>
+            <a href="/autos/index.php" ><button class="btn-inicio">Inicio</button></a>
+        </div>
+        
 
-        <h2>Listado de Marcas</h2>
+        <h2 class="titulo">Listado de Marcas</h2>
 
-        <table>
-            <tr>
+        <hr class="linea-cabecera">
+        <br>
+        <table class="tablas">
+            <tr class="cabecera-tabla">
                 <th>ID</th>
                 <th>Nombre</th>
                 <th>Pais</th>

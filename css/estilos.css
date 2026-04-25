@@ -1,13 +1,15 @@
 
 /* Tabla */
 .tablas {
-    background-color: lightgoldenrodyellow;
+    background-color: lightseagreen;
     border: 2px solid;
     border-color: black;
     border-radius: 1px solid;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    width: 75%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    width: 80%;
     margin: 0 auto;
 } 
             
@@ -23,7 +25,7 @@
 /* Zeldas */
 td {
     text-align: center;
-    color: darkgoldenrod;
+    color: darkred;
     border: 1px solid;
     border-color: black;
 }
@@ -38,10 +40,20 @@ td {
     padding: 1px;
 }    
 
+    /* Boton para ir la inicio */
+    .btn-inicio {
+        order: 1;
+        background-color: steelblue;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 4px;
+    }
+
     /* Mensaje conectado correctamente */
     .mensaje-conexion {
+        order: 2;
         font-size: small;
-        text-align: end;
         color: black;
         font-style: oblique;
         font-weight: bold;
@@ -54,9 +66,10 @@ td {
     /* text-transform: uppercase; */
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
+    color: darkslategray;
     font-size: 50px;
     margin: 2px auto;
-    margin-top: 30px;
+    margin-top: 50px;
 }
       
 /* Linea de debajo de la cabecera*/
@@ -68,3 +81,44 @@ td {
 
 }
 
+/* Index */
+.contenido-index {
+    margin-top: 70px;
+    padding: 20px 40px;
+}
+
+.seccion-index {
+    margin-bottom: 20px;
+}
+
+.seccion-index h3 {
+    margin-bottom: 10px;
+    color: darkslategray;
+}
+
+.btn-index {
+    margin-right: 10px;
+    padding: 8px 18px;
+    background-color: steelblue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-index:disabled {
+    background-color: lightgray;
+    color: gray;
+    cursor: not-allowed;
+}
+
+.seccion-desactivada span {
+    font-size: small;
+    color: gray;
+    font-weight: normal;
+}
+
+.cabecera h2 {
+    text-align: center;
+    
+}
