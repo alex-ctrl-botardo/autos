@@ -20,19 +20,25 @@ $resultado_listar_marca = $stmt->get_result();
     <head>
         <meta charset="UTF-8">
         <title>Listado de Marcas</title>
-        <style>
-            /* Estilo Tabla */
-            table { border-collapse: collapse; }
-            
-            th, td { padding: 20px; border: 1px solid }
-        </style>
+        <link rel="stylesheet" href="/autos/css/estilos.css">
     </head>
 
     <body>
-        <h2>Listado de Marcas</h2>
+        
+        <div class="cabecera">
+            <?php if ($conn): ?>
+                <p class=mensaje-conexion>Conectado correctamente</p>
+            <?php endif; ?>
+            <a href="/autos/index.php" ><button class="btn-inicio">Inicio</button></a>
+        </div>
+        
 
-        <table>
-            <tr>
+        <h2 class="titulo">Listado de Marcas</h2>
+
+        <hr class="linea-cabecera">
+        <br>
+        <table class="tablas">
+            <tr class="cabecera-tabla">
                 <th>ID</th>
                 <th>Nombre</th>
                 <th>Pais</th>
