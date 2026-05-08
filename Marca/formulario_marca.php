@@ -1,17 +1,16 @@
-
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <title>Insertar Marca</title>
+    <link rel="stylesheet" href="/autos/css/estilos.css">
 </head>
 <body>
 
 <h2>Nueva Marca</h2><br></br>
 
 <?php if (isset($_GET['ok'])): ?>
-    <p style="color:green;">Marca guardada correctamente</p>
+    <p class="mensaje-conexion">Marca guardada correctamente</p>
 <?php endif; ?>
 
 <form action="guardar_marca.php" method="POST">

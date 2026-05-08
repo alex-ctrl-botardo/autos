@@ -34,47 +34,45 @@ $resultado_listar_motor = $stmt->get_result();
     <head>
         <meta charset="UTF-8">
         <title>Listado de Motor</title>
+        <link rel="stylesheet" href="/autos/css/estilos-listas.css">
         <link rel="stylesheet" href="/autos/css/estilos.css">
     </head>
 
     <body>
-    
         <div class="cabecera">
+            <a href="/autos/index.php" ><button class="btn-inicio">Inicio</button></a>
             <?php if ($conn): ?>
                 <p class="mensaje-conexion">Conectado correctamente</p>
             <?php endif; ?>    
-            <a href="/autos/index.php" ><button class="btn-inicio">Inicio</button></a>
+            <h2 class="titulo">Lista de Motores</h2>
+            <hr class="linea-titulo">
         </div>  
-        
-
-        <h2 class="titulo">Lista de Motores</h2>    
-
-        <hr class="linea-cabecera">
-        <br>
-        <table class="tablas">
-            <tr class="cabecera-tabla">
-                <th>ID</th>
-                <th>Nombre</th>
-                <th>Potencia</th>
-                <th>Par</th>
-                <th>Cilindrada</th>
-                <th>Nº Pistones</th>
-                <!-- <th>Marca</th> -->
-            </tr>
-        
-           
-            <?php while ($fila = $resultado_listar_motor->fetch_assoc()): ?>
-                <tr>
-                    <td> <?= $fila["id_motor"] ?></td>
-                    <td> <?= htmlspecialchars($fila["nombre"]) ?> </td>
-                    <td> <?= htmlspecialchars($fila["potencia"]) ?> CV</td>
-                    <td> <?= htmlspecialchars($fila["par"]) ?> Nm</td>
-                    <td> <?= htmlspecialchars($fila["cilindrada"]) ?> CC</td>
-                    <td> <?= htmlspecialchars($fila["num_pistones"]) ?> </td>
-                    <!-- <td> <?= htmlspecialchars($fila["id_marca"]) ?> </td> -->
+    
+        <div class="div-tablas">
+            <table class="tablas">
+                <tr class="cabecera-tabla">
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Potencia</th>
+                    <th>Par</th>
+                    <th>Cilindrada</th>
+                    <th>Nº Pistones</th>
+                    <!-- <th>Marca</th> -->
                 </tr>
-            <?php endwhile ?>
-        </table>
-       
+            
+            
+                <?php while ($fila = $resultado_listar_motor->fetch_assoc()): ?>
+                    <tr>
+                        <td> <?= $fila["id_motor"] ?></td>
+                        <td> <?= htmlspecialchars($fila["nombre"]) ?> </td>
+                        <td> <?= htmlspecialchars($fila["potencia"]) ?> CV</td>
+                        <td> <?= htmlspecialchars($fila["par"]) ?> Nm</td>
+                        <td> <?= htmlspecialchars($fila["cilindrada"]) ?> CC</td>
+                        <td> <?= htmlspecialchars($fila["num_pistones"]) ?> </td>
+                        <!-- <td> <?= htmlspecialchars($fila["id_marca"]) ?> </td> -->
+                    </tr>
+                <?php endwhile ?>
+            </table>
+        </div>
     </body>
 </html>

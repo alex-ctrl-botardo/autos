@@ -1,16 +1,21 @@
 <?php
 include "../conexion.php";
 
-echo "Conectado correctamente<br>";
 
 /* Consulta marcas */
-$sql = "SELECT id_marca, nombre FROM Marca";
+$stmt = $conn->prepare(
+    "SELECT 
+        id_marca, nombre 
+    FROM 
+        Marca");
 
-$result = $conn->query($sql);
-
-if (!$result) {
+if (!$stmt) {
     die("Error en la consulta de marcas: " . $conn->error);
-}
+}        
+
+$stmt->execute();
+$result_forml_motor = $stmt->get_result();
+
 ?>
 
 <!DOCTYPE html>
@@ -18,54 +23,80 @@ if (!$result) {
     <head>
         <meta charset="UTF-8">
         <title>Insertar Motor</title>
+        <link rel="stylesheet" href="/autos/css/estilos.css">
+        <link rel="stylesheet" href="/autos/css/estilos-formularios.css">  
     </head>
     <body>
+        <div class="cabecera">
+            <a href="/autos/index.php" ><button class="btn-inicio">Inicio</button></a>
+            <?php if ($conn): ?>
+                <p class="mensaje-conexion">Conectado correctamente</p>
+            <?php endif; ?>    
+            <h2 class="titulo">Nuevo Motor</h2>
+            <hr class="linea-titulo">
+        </div>  
 
-    <h2>Nuevo Motor</h2><br></br>    
+        <?php if (isset($_GET['ok'])): ?>
+            <p class="mensaje-conexion">Motor guardado correctamente</p>  
+        <?php endif; ?> 
 
-    <?php if (isset($_GET['ok'])): ?>
-        <p style="color:green;">Motor guardado correctamente</p>  
-    <?php endif; ?> 
+        
+        <div class="form1">
+            <form action="guardar_motor.php" method="POST">
 
-    <form action="guardar_motor.php" method="POST">
+            <!-- Recoje Nombre -->
+            <div class="form-grupo"> 
+                <label>Nombre del motor:</label>
+                <input put type="text" name="nombre" required>
+            <div>
 
-    <!-- Recoje Nombre -->
-        <label>Nombre del motor:</label><br>
-        <input type="text" name="nombre" required><br><br>
 
-    <!-- Recoje Poatencia-->
-        <label>Potencia:</label><br>
-        <input type="text" name="potencia" required><br><br>
+            <!-- Recoje Poatencia-->
+            <div class="form-grupo">
+                <label>Potencia:</label>
+                <input type="text" name="potencia" required>
+            </div>   
+            
+            
+            <!-- Recoje Par -->
+            <div class="form-grupo">
+                <label>Par:</label>
+                <input type="text" name="par" required>
+            </div>   
+            
+            
+            <!-- Recoje Cilindrada   -->
+            <div class="form-grupo">
+                <label>Cilindrada:</label>
+                <input type="text" step="0.1" name="cilindrada" required>
+            </div>
+            
+            
+            <!-- Recoje Número de pistones  -->
+            <div class="form-grupo">
+                <label>Número de pistones:</label>
+                <input type="rext" name="num_pistones" required>
+            </div>
 
-    <!-- Recoje Par -->
-        <label>Par:</label><br>
-        <input type="text" name="par" required><br><br>
 
-    <!-- Recoje Cilindrada   -->
-        <label>Cilindrada:</label><br>
-        <input type="number" step="0.1" name="cilindrada" required><br><br>
+            <!-- Recoje Id de la Marca a asociar -->
+            <div class="form-grupo">    
+                <label>Marca:</label>
+                <select name="id_marca" required>
+                    <option value="">-- Selecciona una marca --</option>
 
-    <!-- Recoje Número de pistones  -->
-        <label>Número de pistones:</label><br>
-        <input type="number" name="num_pistones" required><br><br>
+                <?php while ($row = $result_forml_motor->fetch_assoc()) { ?>
+                    <option value="<?= $row['id_marca'] ?>">
+                        <?= $row['nombre'] ?>
+                    </option>
+                <?php } ?>
 
-    <!-- Recoje Id de la Marca a asociar -->
-        <label>Marca:</label><br>
-        <select name="id_marca" required>
-            <option value="">-- Selecciona una marca --</option>
+                </select><br><br>
+            </div>    
+                <button type="submit">Guardar motor</button>
 
-            <?php while ($row = $result->fetch_assoc()) { ?>
-                <option value="<?= $row['id_marca'] ?>">
-                    <?= $row['nombre'] ?>
-                </option>
-            <?php } ?>
-
-        </select><br><br>
-
-        <button type="submit">Guardar motor</button>
-
-    </form>
-
+            </form>
+        </div>
     </body>
-    </html>
+</html>
 

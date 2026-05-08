@@ -22,6 +22,7 @@ if (!$result) {
 <head>
     <meta charset="UTF-8">
     <title>Insertar Modelo</title>
+    <link rel="stylesheet" href="/autos/css/estilos-formularios.css">
 </head>
 <body>
 

@@ -1,36 +1,4 @@
-
-/* Tabla */
-.tablas {
-    background-color: lightseagreen;
-    border: 2px solid;
-    border-color: black;
-    border-radius: 1px solid;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-    width: 80%;
-    margin: 0 auto;
-} 
-            
-/* Cabecera */
-.cabecera-tabla {
-    color: black;
-    background-color: lightblue;
-    border: 1px solid;
-    border-color: blue;
-    /* border-top-left-radius: 20px; */
-}
-
-/* Zeldas */
-td {
-    text-align: center;
-    color: darkred;
-    border: 1px solid;
-    border-color: black;
-}
-        
-/* Cabecera*/
+/* CABECERA */
 .cabecera {
     z-index: 999;
     position: fixed;
@@ -38,6 +6,7 @@ td {
     width: 100%;
     background-color: lightgray;
     padding: 1px;
+    margin-bottom: 1px;
 }    
 
     /* Boton para ir la inicio */
@@ -48,6 +17,8 @@ td {
         border: none;
         padding: 10px 15px;
         border-radius: 4px;
+        margin-top: 5px;
+        margin-left: 5px;
     }
 
     /* Mensaje conectado correctamente */
@@ -60,65 +31,68 @@ td {
         background-color: lightgreen;
         display: inline;
     }    
+/* CABECERA */
 
-/* Mensaje de la cabexera*/
+
+
+/* Mensaje del Titulo*/
 .titulo {
-    /* text-transform: uppercase; */
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
     color: darkslategray;
     font-size: 50px;
     margin: 2px auto;
-    margin-top: 50px;
 }
       
-/* Linea de debajo de la cabecera*/
-.linea-cabecera {
-    border: none;
-    border-top: 2px solid black;
-    width: 80%;
-    margin: 8px auto;
+    /* Linea de debajo de la cabecera*/
+    .linea-titulo {
+        border: none;
+        border-top: 2px solid black;
+        width: 90%;
+        margin: 8px auto;
 
-}
+    }
 
-/* Index */
-.contenido-index {
-    margin-top: 70px;
-    padding: 20px 40px;
-}
 
-.seccion-index {
-    margin-bottom: 20px;
-}
 
-.seccion-index h3 {
-    margin-bottom: 10px;
-    color: darkslategray;
-}
+/* INDEX */
+    .contenido-index {
+        margin-top: 70px;
+        padding: 20px 40px;
+    }
 
-.btn-index {
-    margin-right: 10px;
-    padding: 8px 18px;
-    background-color: steelblue;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
+    .seccion-index {
+        margin-bottom: 20px;
+    }
 
-.btn-index:disabled {
-    background-color: lightgray;
-    color: gray;
-    cursor: not-allowed;
-}
+    .seccion-index h3 {
+        margin-bottom: 10px;
+        color: darkslategray;
+    }
 
-.seccion-desactivada span {
-    font-size: small;
-    color: gray;
-    font-weight: normal;
-}
+    .btn-index {
+        margin-right: 10px;
+        padding: 8px 18px;
+        background-color: steelblue;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
 
-.cabecera h2 {
-    text-align: center;
-    
-}
+    .btn-index:disabled {
+        background-color: lightgray;
+        color: gray;
+        cursor: not-allowed;
+    }
+
+    .seccion-desactivada span {
+        font-size: small;
+        color: gray;
+        font-weight: normal;
+    }
+
+    .cabecera h2 {
+        text-align: center;
+    }
+/* INDEX */

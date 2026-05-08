@@ -1,0 +1,31 @@
+/* Tabla */
+.div-tablas {
+    margin-top: 130px;
+    
+}
+    .tablas {
+        background-color: lightseagreen;
+        border: 2px solid;
+        border-color: black;
+        border-radius: 5px ;
+        width: 80%;
+        margin: 0 auto;
+    } 
+            
+    /* Cabecera de la tabla*/
+    .cabecera-tabla {
+        color: black;
+        background-color: lightblue;
+        border: 1px solid;
+        border-color: blue;
+        /* border-top-left-radius: 20px; */
+    }
+
+    /* Zeldas */
+    td {
+        text-align: center;
+        color: darkred;
+        border: 1px solid;
+        border-color: black;
+    }
+        

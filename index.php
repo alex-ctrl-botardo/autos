@@ -1,4 +1,7 @@
-<?php require_once "conexion.php"; ?>
+<?php 
+require_once "conexion.php"; 
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -9,8 +12,8 @@
 <body>
 
     <div class="cabecera">
-        <h2>Panel de Autos</h2>
         <p class="mensaje-conexion">Conectado correctamente</p>
+        <h2 class="titulo">Panel de Autos</h2>
     </div>
 
     <div class="contenido-index">
@@ -43,6 +46,7 @@
             <button class="btn-index" disabled>Modelo</button>
         </div>
 
+        
     </div>
 
 </body>
