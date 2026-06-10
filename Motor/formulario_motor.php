@@ -1,5 +1,6 @@
 <?php
-include "../conexion.php";
+require_once "../conexion.php";
+require_once "../sesion.php";
 
 
 /* Consulta marcas */
@@ -40,61 +41,63 @@ $result_forml_motor = $stmt->get_result();
             <p class="mensaje-conexion">Motor guardado correctamente</p>  
         <?php endif; ?> 
 
-        
-        <div class="form1">
+            
+        <div class="form">
             <form action="guardar_motor.php" method="POST">
+            <div class="form-grid">
 
-            <!-- Recoje Nombre -->
-            <div class="form-grupo"> 
-                <label>Nombre del motor:</label>
-                <input put type="text" name="nombre" required>
-            <div>
-
-
-            <!-- Recoje Poatencia-->
-            <div class="form-grupo">
-                <label>Potencia:</label>
-                <input type="text" name="potencia" required>
-            </div>   
-            
-            
-            <!-- Recoje Par -->
-            <div class="form-grupo">
-                <label>Par:</label>
-                <input type="text" name="par" required>
-            </div>   
-            
-            
-            <!-- Recoje Cilindrada   -->
-            <div class="form-grupo">
-                <label>Cilindrada:</label>
-                <input type="text" step="0.1" name="cilindrada" required>
-            </div>
-            
-            
-            <!-- Recoje Número de pistones  -->
-            <div class="form-grupo">
-                <label>Número de pistones:</label>
-                <input type="rext" name="num_pistones" required>
-            </div>
+                <!-- Recoje Nombre -->
+                <div class="form-grupo"> 
+                    <label>Nombre del motor:</label>
+                    <input put type="text" name="nombre" required>
+                </div>
 
 
-            <!-- Recoje Id de la Marca a asociar -->
-            <div class="form-grupo">    
-                <label>Marca:</label>
-                <select name="id_marca" required>
-                    <option value="">-- Selecciona una marca --</option>
+                <!-- Recoje Poatencia-->
+                <div class="form-grupo">
+                    <label>Potencia:</label>
+                    <input type="number" name="potencia" required>
+                </div>   
+                
+                
+                <!-- Recoje Par -->
+                <div class="form-grupo">
+                    <label>Par:</label>
+                    <input type="number" name="par" required>
+                </div>   
+                
+                
+                <!-- Recoje Cilindrada   -->
+                <div class="form-grupo">
+                    <label>Cilindrada:</label>
+                    <input type="number" name="cilindrada" required>
+                </div>
+                
+                
+                <!-- Recoje Número de pistones  -->
+                <div class="form-grupo">
+                    <label>Número de pistones:</label>
+                    <input type="number" name="num_pistones" required>
+                </div>
 
-                <?php while ($row = $result_forml_motor->fetch_assoc()) { ?>
-                    <option value="<?= $row['id_marca'] ?>">
-                        <?= $row['nombre'] ?>
-                    </option>
-                <?php } ?>
 
-                </select><br><br>
-            </div>    
+                <!-- Recoje Id de la Marca a asociar -->
+                <div class="form-grupo">    
+                    <label>Marca:</label>
+                    <select name="id_marca" required>
+                        <option value="">-- Selecciona una marca --</option>
+
+                    <?php while ($row = $result_forml_motor->fetch_assoc()) { ?>
+                        <option value="<?= $row['id_marca'] ?>">
+                            <?= $row['nombre'] ?>
+                        </option>
+                    <?php } ?>
+
+                    </select><br><br>
+                </div>
+            </div>        
                 <button type="submit">Guardar motor</button>
-
+                <button type="reset">Limpiar campos</button>
             </form>
         </div>
     </body>

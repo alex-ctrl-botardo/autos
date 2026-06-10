@@ -1,5 +1,6 @@
 <?php 
-require_once "conexion.php"; 
+require_once "../conexion.php"; 
+require_once "../sesion.php";
 ?>
 
 <!DOCTYPE html>
@@ -14,6 +15,7 @@ require_once "conexion.php";
     <div class="cabecera">
         <p class="mensaje-conexion">Conectado correctamente</p>
         <h2 class="titulo">Panel de Autos</h2>
+        <hr class="linea-titulo">
     </div>
 
     <div class="contenido-index">
@@ -31,9 +33,18 @@ require_once "conexion.php";
         <!-- LISTAS -->
         <div class="seccion-index">
             <h3>Listados</h3>
-            <a href="/autos/Motor/listar_motor.php"><button class="btn-index">Motores</button></a>
-            <a href="/autos/Marca/listar_marca.php"><button class="btn-index">Marcas</button></a>
-            <a href="/autos/Modelo/listar_modelo.php"><button class="btn-index">Modelos</button></a>
+            <a href="/autos/Motor/listar_motor.php"><button class="btn-index" 
+                <?php if ($_SESSION['rol'] !== 'admin'): ?> disabled <? endif; ?> 
+                >Motores</button>
+            </a>
+
+            <a href="/autos/Marca/listar_marca.php"><button class="btn-index"
+                <?php if ($_SESSION['rol'] !== 'admin'): ?> disabled <? endif; ?>        
+                >Marcas</button></a>
+            
+            <a href="/autos/Modelo/listar_modelo.php"><button class="btn-index"
+                <?php if ($_SESSION['rol'] !== 'admin'): ?> disabled <? endif; ?>    
+                >Modelos</button></a>
         </div>
 
         <hr>

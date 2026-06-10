@@ -1,27 +1,43 @@
-.form1 {
+.form {
     width: 90%;
     margin: 0 auto;
     margin-top: 130px;
 }
 
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    max-width: 120%;
+    margin: 0 auto;
+}
+
 
 .form-grupo{
-    margin-bottom: 10px;
-    margin-right: 10px;
+    margin-bottom: 1rem;
+    display: grid;
 }
 
 .form-grupo label {
-    margin-bottom: 10px;
+    margin-bottom: 0.5rem;
     color: darkslategray;
     display: block;
-    margin-bottom: 5px;
     font-weight: bold;
 }
 
 .form-grupo input,
 .form-grupo select {
-    width: 50%;
+    width: 75%;
     padding: 8px;
     border: 1px solid gray;
     border-radius: 4px;
+}
+
+form button {
+    padding: 5px 10px;
+    color: white;
+    background-color: steelblue;
+    border-radius: 5px ;
+    border: none;
+    margin-right: 1rem;
+    margin-top: 10px;
 }

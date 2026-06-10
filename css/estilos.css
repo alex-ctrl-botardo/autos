@@ -1,3 +1,13 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+
 /* CABECERA */
 .cabecera {
     z-index: 999;
@@ -31,6 +41,16 @@
         background-color: lightgreen;
         display: inline;
     }    
+
+    .mensaje-error {
+        order: 2;
+        font-size: small;
+        color: black;
+        font-style: oblique;
+        font-weight: bold;
+        background-color: lightcoral;
+        display: inline;    
+    }
 /* CABECERA */
 
 
@@ -57,7 +77,7 @@
 
 /* INDEX */
     .contenido-index {
-        margin-top: 70px;
+        margin-top: 100px;
         padding: 20px 40px;
     }
 
@@ -96,3 +116,7 @@
         text-align: center;
     }
 /* INDEX */
+
+html {
+    background-color: whitesmoke;
+}

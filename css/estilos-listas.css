@@ -4,28 +4,25 @@
     
 }
     .tablas {
-        background-color: lightseagreen;
+        background-color: lightblue;
         border: 2px solid;
-        border-color: black;
+        border-color: gray;
         border-radius: 5px ;
-        width: 80%;
+        width: 90%;
         margin: 0 auto;
     } 
             
     /* Cabecera de la tabla*/
-    .cabecera-tabla {
+    .cabecera-tabla{
         color: black;
-        background-color: lightblue;
-        border: 1px solid;
-        border-color: blue;
-        /* border-top-left-radius: 20px; */
+        background-color: lightskyblue;
+        border: 1px ;
+        border-color: black;
     }
 
     /* Zeldas */
     td {
         text-align: center;
-        color: darkred;
-        border: 1px solid;
         border-color: black;
     }
         

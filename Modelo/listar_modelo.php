@@ -1,5 +1,7 @@
 <?php 
 include "../conexion.php";
+require_once "../sesion.php";
+
 
 // seleccion
 $stms = $conn->prepare (
