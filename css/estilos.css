@@ -17,23 +17,31 @@
     background-color: lightgray;
     padding: 1px;
     margin-bottom: 1px;
+    justify-content: space-between;
+    display: flex;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }    
 
     /* Boton para ir la inicio */
     .btn-inicio {
-        order: 1;
+        order: 2;
         background-color: steelblue;
         color: white;
         border: none;
         padding: 10px 15px;
         border-radius: 4px;
+        margin: auto;
         margin-top: 5px;
         margin-left: 5px;
+        cursor: pointer;
     }
 
     /* Mensaje conectado correctamente */
     .mensaje-conexion {
-        order: 2;
+        order: 1;
+        margin-left: 7px;
+        text-align: center;
         font-size: small;
         color: black;
         font-style: oblique;
@@ -51,6 +59,13 @@
         background-color: lightcoral;
         display: inline;    
     }
+
+    .usuario {
+        margin: auto;
+        margin-left: auto;
+        margin-right: 50px;
+        display: block;
+    }
 /* CABECERA */
 
 
@@ -58,12 +73,19 @@
 /* Mensaje del Titulo*/
 .titulo {
     font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
     color: darkslategray;
     font-size: 50px;
     margin: 2px auto;
+    margin-left: 50px ;
+    display: inline;
 }
-      
+
+.titulito {
+    text-align: start;
+    font-size: 15px;
+    color: gray;
+}
+
     /* Linea de debajo de la cabecera*/
     .linea-titulo {
         border: none;
@@ -78,7 +100,7 @@
 /* INDEX */
     .contenido-index {
         margin-top: 100px;
-        padding: 20px 40px;
+        padding: 20px 50px;
     }
 
     .seccion-index {
@@ -115,8 +137,24 @@
     .cabecera h2 {
         text-align: center;
     }
+
+   
+
+    
 /* INDEX */
 
 html {
     background-color: whitesmoke;
+}
+
+/*Login*/
+.form_login label, input{
+    text-align: center;
+}
+
+.form_login hr {
+    border: none;
+    border-top: 2px solid black;
+    width: 100%;
+    margin: 8px auto;
 }

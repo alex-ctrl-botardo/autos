@@ -1,6 +1,6 @@
 <?php 
-require_once "../conexion.php"; 
-require_once "../sesion.php";
+require_once "conexion.php"; 
+require_once "sesion.php";
 ?>
 
 <!DOCTYPE html>
@@ -13,9 +13,15 @@ require_once "../sesion.php";
 <body>
 
     <div class="cabecera">
-        <p class="mensaje-conexion">Conectado correctamente</p>
-        <h2 class="titulo">Panel de Autos</h2>
-        <hr class="linea-titulo">
+        <!-- <a href="/autos/index.php"><button class="btn-inicio">Inicio</button></a> -->
+        <h2 class="titulo">Índice de Coches<p class="titulito">by ale</p></h2>
+        <div class="usuario">
+            <span class="mensaje-conexion">
+                <?= $_SESSION['usuario'] ?> (<?= $_SESSION['rol']?>)
+            </span><br>
+            <a href="/autos/logout.php"><button class="btn-inicio">Cerrar sesión</button></a>
+        </div>    
+       
     </div>
 
     <div class="contenido-index">
@@ -23,9 +29,16 @@ require_once "../sesion.php";
         <!-- FORMULARIOS -->
         <div class="seccion-index">
             <h3>Formularios</h3>
+            <?php if ($_SESSION['rol'] === 'admin'): ?>
             <a href="/autos/Motor/formulario_motor.php"><button class="btn-index">Motor</button></a>
             <a href="/autos/Marca/formulario_marca.php"><button class="btn-index">Marca</button></a>
             <a href="/autos/Modelo/formulario_modelo.php"><button class="btn-index">Modelo</button></a>
+            <?php else: ?>
+            <button class="btn-index" disabled>Motor</button>
+            <button class="btn-index" disabled>Marca</button>
+            <button class="btn-index" disabled>Modelo</button>
+            <?php endif; ?>
+            
         </div>
 
         <hr>
@@ -33,18 +46,9 @@ require_once "../sesion.php";
         <!-- LISTAS -->
         <div class="seccion-index">
             <h3>Listados</h3>
-            <a href="/autos/Motor/listar_motor.php"><button class="btn-index" 
-                <?php if ($_SESSION['rol'] !== 'admin'): ?> disabled <? endif; ?> 
-                >Motores</button>
-            </a>
-
-            <a href="/autos/Marca/listar_marca.php"><button class="btn-index"
-                <?php if ($_SESSION['rol'] !== 'admin'): ?> disabled <? endif; ?>        
-                >Marcas</button></a>
-            
-            <a href="/autos/Modelo/listar_modelo.php"><button class="btn-index"
-                <?php if ($_SESSION['rol'] !== 'admin'): ?> disabled <? endif; ?>    
-                >Modelos</button></a>
+            <a href="/autos/Motor/listar_motor.php"><button class="btn-index" >Motor</button></a>
+            <a href="/autos/Marca/listar_marca.php"><button class="btn-index">Marca</button></a>
+            <a href="/autos/Modelo/listar_modelo.php"><button class="btn-index">Modelo</button></a>
         </div>
 
         <hr>
@@ -57,7 +61,7 @@ require_once "../sesion.php";
             <button class="btn-index" disabled>Modelo</button>
         </div>
 
-        
+        <hr>
     </div>
 
 </body>

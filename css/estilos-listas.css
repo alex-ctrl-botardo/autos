@@ -1,15 +1,17 @@
 /* Tabla */
 .div-tablas {
     margin-top: 130px;
-    
+    margin-left: 50px;
+    margin-right: 50px;
 }
     .tablas {
         background-color: lightblue;
         border: 2px solid;
         border-color: gray;
         border-radius: 5px ;
-        width: 90%;
+        width: 100%;
         margin: 0 auto;
+        margin-bottom: 20px;
     } 
             
     /* Cabecera de la tabla*/

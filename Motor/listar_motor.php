@@ -2,7 +2,7 @@
 include "../conexion.php";
 require_once "../sesion.php";
 
-
+$orden = "id_motor";
 //seleccion
 $stmt = $conn->prepare(
     "SELECT 
@@ -10,7 +10,7 @@ $stmt = $conn->prepare(
     FROM
         Motor 
     ORDER BY 
-        nombre" 
+        $orden" 
 );
 
 $stmt->execute();
@@ -42,15 +42,18 @@ $resultado_listar_motor = $stmt->get_result();
 
     <body>
         <div class="cabecera">
-            <a href="/autos/index.php" ><button class="btn-inicio">Inicio</button></a>
-            <?php if ($conn): ?>
-                <p class="mensaje-conexion">Conectado correctamente</p>
-            <?php endif; ?>    
-            <h2 class="titulo">Lista de Motores</h2>
-            <hr class="linea-titulo">
-        </div>  
+            <h2 class="titulo">Lista de Motores<p class="titulito">by ale</p></h2>
+            <div class="usuario">
+                <span class="mensaje-conexion">
+                    <?= $_SESSION['usuario'] ?> (<?= $_SESSION['rol']?>)
+                </span><br>
+                <a href="/autos/index.php"><button class="btn-inicio">Inicio</button></a>
+                <!-- <a href="/autos/logout.php"><button class="btn-inicio">Cerrar sesión</button></a> -->
+            </div>    
+        </div>     
     
         <div class="div-tablas">
+            <?php while ($fila = $resultado_listar_motor->fetch_assoc()): ?>
             <table class="tablas">
                 <tr class="cabecera-tabla">
                     <th>ID</th>
@@ -61,20 +64,18 @@ $resultado_listar_motor = $stmt->get_result();
                     <th>Nº Pistones</th>
                     <!-- <th>Marca</th> -->
                 </tr>
-            
-            
-                <?php while ($fila = $resultado_listar_motor->fetch_assoc()): ?>
-                    <tr>
-                        <td> <?= $fila["id_motor"] ?></td>
-                        <td> <?= htmlspecialchars($fila["nombre"]) ?> </td>
-                        <td> <?= htmlspecialchars($fila["potencia"]) ?> CV</td>
-                        <td> <?= htmlspecialchars($fila["par"]) ?> Nm</td>
-                        <td> <?= htmlspecialchars($fila["cilindrada"]) ?> CC</td>
-                        <td> <?= htmlspecialchars($fila["num_pistones"]) ?> </td>
-                        <!-- <td> <?= htmlspecialchars($fila["id_marca"]) ?> </td> -->
-                    </tr>
-                <?php endwhile ?>
+                <tr>
+                    <td> <?= $fila["id_motor"] ?></td>
+                    <td> <?= htmlspecialchars($fila["nombre"]) ?> </td>
+                    <td> <?= htmlspecialchars($fila["potencia"]) ?> CV</td>
+                    <td> <?= htmlspecialchars($fila["par"]) ?> Nm</td>
+                    <td> <?= htmlspecialchars($fila["cilindrada"]) ?> cc</td>
+                    <td> <?= htmlspecialchars($fila["num_pistones"]) ?> </td>
+                    <!-- <td> <?= htmlspecialchars($fila["id_marca"]) ?> </td> -->
+                </tr>   
             </table>
+            <br>
+            <?php endwhile ?>
         </div>
     </body>
 </html>

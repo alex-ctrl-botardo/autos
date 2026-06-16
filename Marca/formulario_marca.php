@@ -33,13 +33,15 @@ if (!$stmt) {
 
     <h2>Nueva Marca</h2><br></br>
     <div class="cabecera">
-        <a href="/autos/index.php" ><button class="btn-inicio">Inicio</button></a>
-        <?php if ($conn): ?>
-            <p class="mensaje-conexion">Conectado correctamente</p>
-        <?php endif; ?>    
-        <h2 class="titulo">Nuevo Marcar</h2>
-        <hr class="linea-titulo">
-    </div>  
+        <h2 class="titulo">Insertar Motor<p class="titulito">by ale</p></h2>
+        <div class="usuario">
+            <span class="mensaje-conexion">
+                <?= $_SESSION['usuario'] ?> (<?= $_SESSION['rol']?>)
+            </span><br>
+            <a href="/autos/index.php"><button class="btn-inicio">Inicio</button></a>
+            <!-- <a href="/autos/logout.php"><button class="btn-inicio">Cerrar sesión</button></a> -->
+        </div>    
+    </div>   
 
     <?php if (isset($_GET['ok'])): ?>
         <p class="mensaje-conexion">Marca guardada correctamente</p>
@@ -50,15 +52,20 @@ if (!$stmt) {
 
         <div class="form-grid">
         <!-- Recoje Nombre -->
-            <label>Nombre de la marca:</label><br>
-            <input type="text" name="nombre" required><br><br>
+            <div class="form-grupo">
+                <label>Nombre de la marca:</label><br>
+                <input type="text" name="nombre" required>
+            </div>
 
         <!-- Recoje País -->
-            <label>País:</label><br>
-            <input type="text" name="pais" required><br><br>
-
-            <button type="submit">Guardar marca</button>
+            <div class="form-grupo">
+                <label>País:</label><br>
+                <input type="text" name="pais" required>  
+            </div>
+            
         </div>
+            <button type="submit">Guardar marca</button>
+            <button type="reset">Limpiar campos</button>
         </form>
     </div>
     </body>

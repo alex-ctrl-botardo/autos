@@ -29,13 +29,15 @@ $result_forml_motor = $stmt->get_result();
     </head>
     <body>
         <div class="cabecera">
-            <a href="/autos/index.php" ><button class="btn-inicio">Inicio</button></a>
-            <?php if ($conn): ?>
-                <p class="mensaje-conexion">Conectado correctamente</p>
-            <?php endif; ?>    
-            <h2 class="titulo">Nuevo Motor</h2>
-            <hr class="linea-titulo">
-        </div>  
+            <h2 class="titulo">Insertar Motor<p class="titulito">by ale</p></h2>
+            <div class="usuario">
+                <span class="mensaje-conexion">
+                    <?= $_SESSION['usuario'] ?> (<?= $_SESSION['rol']?>)
+                </span><br>
+                <a href="/autos/index.php"><button class="btn-inicio">Inicio</button></a>
+                <!-- <a href="/autos/logout.php"><button class="btn-inicio">Cerrar sesión</button></a> -->
+            </div>    
+        </div> 
 
         <?php if (isset($_GET['ok'])): ?>
             <p class="mensaje-conexion">Motor guardado correctamente</p>  
