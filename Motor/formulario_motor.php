@@ -57,21 +57,21 @@ $result_forml_motor = $stmt->get_result();
 
                 <!-- Recoje Poatencia-->
                 <div class="form-grupo">
-                    <label>Potencia:</label>
+                    <label>Potencia (CV):</label>
                     <input type="number" name="potencia" required>
                 </div>   
                 
                 
                 <!-- Recoje Par -->
                 <div class="form-grupo">
-                    <label>Par:</label>
+                    <label>Par (Nm):</label>
                     <input type="number" name="par" required>
                 </div>   
                 
                 
                 <!-- Recoje Cilindrada   -->
                 <div class="form-grupo">
-                    <label>Cilindrada:</label>
+                    <label>Cilindrada (m3):</label>
                     <input type="number" name="cilindrada" required>
                 </div>
                 

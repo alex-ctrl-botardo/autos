@@ -1,3 +1,10 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 /* Tabla */
 .div-tablas {
     margin-top: 130px;
@@ -27,4 +34,25 @@
         text-align: center;
         border-color: black;
     }
-        
+
+    /* Selector de paginas */
+    .paginacion {
+        margin-left: 50px;   
+        display: flex;  
+        justify-content: center;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+
+
+    .paginacion .pagina{
+        background-color: rgb(190, 190, 0);
+        color: aliceblue;
+        border: none;
+        padding: 2px 6px;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+
+    
