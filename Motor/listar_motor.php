@@ -6,7 +6,7 @@ require_once "../sesion.php";
 $orden = "id_motor";
 
 // PAGINACIÓN  
-$por_pag = 2;
+$por_pag = 3;
 $pag_actual = isset($_GET['pag']) ? (int)$_GET['pag'] : 1;
 if ($pag_actual < 1) {
     $pag_actual = 1;
@@ -48,7 +48,7 @@ $resultado_listar_motor = $stmt->get_result();
 <html lang="es">
     <head>
         <meta charset="UTF-8">
-        <title>Listado de Motor</title>
+        <title>Listado de Motores</title>
         <link rel="stylesheet" href="/autos/css/estilos-listas.css">
         <link rel="stylesheet" href="/autos/css/estilos.css">
     </head>
@@ -66,7 +66,7 @@ $resultado_listar_motor = $stmt->get_result();
             </div>    
         </div>     
         
-        <!-- <div id="contenedor-pag">  -->
+        <div class="contenido-lista">
             <!-- TABLAS -->
             <div class="div-tablas">
                 <?php 
@@ -96,14 +96,24 @@ $resultado_listar_motor = $stmt->get_result();
                 <br>
                 <?php endwhile ?>
             </div>
+
+            <!-- Selector de paginas -->
+            
             <div class="paginacion">
-            <?php for ($i = 1; $i <= $total_pag; $i++): ?>
-                <button href="?pag=<?= $i ?>" class=" pagina <?= ($i == $pag_actual) ? 'activo' : '' ?>">
-                    <?= $i ?>
-                </button>
-            <?php endfor; ?>
+                <div class="cabecera-pag">
+                    <p>Páginas: </p>
+                </div>
+                <div class="paginas">
+                <?php for ($i = 1; $i <= $total_pag; $i++): ?>
+                    <a href="?pag=<?= $i ?>" > 
+                        <button class="pagina <?= ($i == $pag_actual) ? 'activo' : '' ?>">
+                            <?= $i ?> 
+                        </button> 
+                    </a>
+                <?php endfor; ?>
+                </div>
             </div>
-        <!-- </div>            -->
+        </div>
     </body>
 </html>
 
